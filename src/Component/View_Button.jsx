@@ -5,9 +5,10 @@ function ViewButton(props) {
     <div>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-outline-info"
         data-bs-toggle="modal"
         data-bs-target="#formModal"
+        style={{ width: 90, marginTop: 15 }}
       >
         View
       </button>

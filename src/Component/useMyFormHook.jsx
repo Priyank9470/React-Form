@@ -66,6 +66,7 @@ function useMyFormHook(initial) {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        alert("Thank you for submitting this form")
     };
 
 

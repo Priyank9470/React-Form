@@ -33,6 +33,7 @@ const RegistrationForm = () => {
               // required // --- if we use "required" in <input>,<select> or <textarea> then it will validated by browser,so to add custome validation we use no validate in <form>
               onChange={handleChange}
               value={registrationModel.name}
+              autoComplete="off"
             />
             {registrationModelError.nameError && <div>Enter valid name</div>}
           </div>
@@ -48,6 +49,7 @@ const RegistrationForm = () => {
               type="text"
               name="email"
               className="form-control"
+              placeholder="Enter your email"
               id="email"
               // required
               onChange={handleChange}
@@ -68,6 +70,7 @@ const RegistrationForm = () => {
               type="text"
               className="form-control"
               name="phoneNumber"
+              placeholder="Enter your Phone Number"
               id="phoneNumber"
               // required
               onChange={handleChange}
@@ -179,6 +182,7 @@ const RegistrationForm = () => {
             accept="image/*"
             className="form-control"
             aria-label="file example"
+            style={{ width: 450, marginLeft: 68 }}
             // required
             onChange={handleImageChange}
           />
@@ -186,6 +190,7 @@ const RegistrationForm = () => {
             <div>
               <img
                 src={registrationModel.image}
+                style={{ width: 300, marginTop: 24, marginRight: 691 }}
                 alt="Thumb"
               />
             </div>
@@ -193,28 +198,27 @@ const RegistrationForm = () => {
           {registrationModelError.imageError && <div>Upload Image</div>}
         </div>
 
-        <div>
+        <div className="inline" style={{ marginTop: 30 }}>
           {/* Submit button */}
-          <button type="submit" className="btn btn-primary" onClick={Validate}>
+          <button type="submit" className="btn btn-outline-success" onClick={Validate} style={{ width: 90 }}>
             Submit
           </button>
 
           {/* to display details in popup */}
-          <div>
-            <ViewButton
-              newname={registrationModel.name}
-              newemail={registrationModel.email}
-              newcity={registrationModel.selectCity}
-              newradio={registrationModel.radio}
-              newmobile={registrationModel.phoneNumber}
-              newimage={registrationModel.image}
-            />
-          </div>
+          <ViewButton
+            newname={registrationModel.name}
+            newemail={registrationModel.email}
+            newcity={registrationModel.selectCity}
+            newradio={registrationModel.radio}
+            newmobile={registrationModel.phoneNumber}
+            newimage={registrationModel.image}
+          />
 
           {/* Reset button */}
           <button
             type="reset"
-            className="btn btn-info"
+            className="btn btn-outline-primary"
+            style={{ width: 90, marginTop: 15 }}
             onClick={handleReset}
           >
             Reset all
