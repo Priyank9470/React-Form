@@ -4,7 +4,7 @@ import RegistrationForm from "./Component/RegistrationForm";
 function App() {
   return (
     <div className="App">
-      <RegistrationForm />
+        <RegistrationForm />
     </div>
   );
 }
